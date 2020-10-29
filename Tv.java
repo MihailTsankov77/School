@@ -39,5 +39,17 @@ public class Tv {
 		vol --;
 	}
 	
+	public int getChanel() {
+		return chanel;
+	}
+	
+	public int getVolume() {
+		return vol;
+	}
+	
+	public boolean IsOn() {
+		return on;
+	}
+	
 	
 }
