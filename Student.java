@@ -20,8 +20,16 @@ public class Student {
 		return this.Name;
 	}
 	
+	public void setName(String _name) {
+		this.Name = _name;
+	}
+	
 	public double getGrade() {
 		return this.Grade;
+	}
+	
+	public void setGrade(double _grade) {
+		this.Grade = _grade;
 	}
 	
 	@Override
