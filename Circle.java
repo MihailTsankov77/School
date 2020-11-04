@@ -18,4 +18,8 @@ public class Circle {
 	public void setRad(double _newRad) {
 		rad = _newRad;
 	}
+	
+	public double getRad() {
+		return this.rad;
+	}
 }
