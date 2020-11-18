@@ -1,7 +1,5 @@
 package klas11g;
 
-import java.util.Scanner;
-
 public class PalidromicPrime {
 
 public static void main(String[] args) {

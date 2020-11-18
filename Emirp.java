@@ -1,7 +1,5 @@
 package klas11g;
 
-import java.util.Scanner;
-
 public class Emirp {
 
 public static void main(String[] args) {

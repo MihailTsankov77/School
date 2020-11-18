@@ -1,46 +1,60 @@
 package klas11g;
 
 import java.util.Scanner;
+import java.util.Vector;
 
 public class Anagam {
 
+	private static Scanner sc;
+
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);
+		sc = new Scanner(System.in);
 		
 		System.out.println("First?");
-		String s1 = sc.nextLine().toLowerCase().replace(" ", "").replace(".", "").replace("?", "").replace(",", "").replace(":", "");
+		String s1 = sc.nextLine().toLowerCase();
 		
-		System.out.println("Second?");
-		String s2 = sc.nextLine().toLowerCase().replace(" ", "").replace(".", "").replace("?", "").replace(",", "").replace(":", "");
-		
-		char sym;
-		boolean cont =false, no =false;
-		for(int i =0 ; i<s1.length(); i ++) {
 			
-			sym = s1.charAt(i);
+		System.out.println("Second?");
+		String s2 = sc.nextLine().toLowerCase();
+	
+	
+		
+		boolean cont =false;
+		
+		
+		for(int i =0 ; i<s1.length(); i ++){
+			
+			if(s1.charAt(i)>='a' && s1.charAt(i)<='z') {
 			
 			for(int j = 0;j<s2.length();j++) {
-				if(sym==s2.charAt(j)) {
+				if(s2.charAt(j)>='a' && s2.charAt(j)<='z') {
+				if(s1.charAt(i)==s2.charAt(j)) {
 					cont =true;
+					s2 = s2.substring(0, j-1) + s2.substring(j+1, s2.length()-1);
 					break;
 				}
+			}else {
+				s2 = s2.substring(0, j-1) + s2.substring(j+1, s2.length()-1);
+			}
 				
 			}
-			if(!cont) {
-				no = true;
-				break;
+			if(!cont){
+				System.out.println("Not a Anagam");
+				return;
 			}else {
+				
 				cont = false;
 			}
 			
+			}
+			
+			s1 = s1.substring(0, i-1) + s1.substring(i+1, s1.length()-1);
+		
+			
 		}
 		
-		if(!no) {
-			System.out.println("Poly");
-		}else {
-			System.out.println("no Poly");
-		}
+			System.out.println("Anagam");
+		
+		
 	}
-
 }

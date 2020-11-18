@@ -3,11 +3,13 @@ package klas11g;
 import java.util.Scanner;
 
 public class FinalExam {
-    public static void main(String[] args) {
+    private static Scanner reader;
+
+	public static void main(String[] args) {
         double average;
         int daysAbsent;
         
-        Scanner reader = new Scanner(System.in);
+        reader = new Scanner(System.in);
         System.out.println("This program will determine if you can get out of the final exam.");
         System.out.println("Please answer the following questions.");
         System.out.println("What is your average in the class?");
