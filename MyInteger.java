@@ -24,7 +24,8 @@ public class MyInteger {
 	}
 	
 	public  boolean IsPrime(){
-		for(int i= 2; i<=Math.sqrt(this.value); i++){
+		double sqrt = Math.sqrt(this.value);
+		for(int i= 2; i<=sqrt; i++){
 			if(this.value%i==0)	return false;
 		}
 		return true;

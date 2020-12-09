@@ -1,6 +1,7 @@
 package klas11g;
 
 import java.util.Date;
+import java.util.Scanner;
 
 public class Account {
 	
@@ -8,6 +9,7 @@ public class Account {
 	private double balance = 0;
 	private static double yearInterestRate = 0;
 	private final Date date = new Date();
+	private Scanner sc;
 	
 
 	public Account() {}
@@ -53,12 +55,36 @@ public class Account {
 		return (this.balance/100)*Account.getMonthlyInterestRate();
 	}
 	
-	public void withdraw(int _withdraw) {
+	public void withdraw(double _withdraw) {
 		this.balance -= _withdraw;
 	}
 	
-	public void deposit(int _deposit) {
+	public void deposit(double _deposit) {
 		this.balance += _deposit;
+	}
+	
+	public void getMenu() {
+		sc = new Scanner (System.in);
+		int choice;
+		while(true) {
+			do {
+			System.out.print("Main menu \n1: check balance \n2: withdraw \n3: deposit \n4: exit \nEnter a choice:");
+			choice = sc.nextInt();
+			}while(choice<1 || choice>4);
+			
+			if(choice == 1) System.out.println(this.getBalance());
+			if(choice == 2){
+				System.out.print("Enter an amount to withdraw: ");
+				this.withdraw(sc.nextDouble());
+			}
+			if(choice == 3){
+				System.out.print("Enter an amount to deposit: ");
+				this.deposit(sc.nextDouble());
+			}
+			if(choice == 4) break;
+		
+		}
+		//sc.close();
 	}
 	
 }
